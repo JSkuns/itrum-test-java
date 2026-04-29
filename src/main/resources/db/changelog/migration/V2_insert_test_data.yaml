@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: VVTerekhin
+      preConditions:
+        - onFail: MARK_RAN
+          rowCount:
+            tableName: wallets
+            expectedRows: 0  # Заполнять только если таблица пустая
+      changes:
+        - insert:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  value: "550e8400-e29b-41d4-a716-446655440001"
+              - column:
+                  name: balance
+                  valueNumeric: "1000.00"
+              - column:
+                  name: version
+                  valueNumeric: "0"
+              - column:
+                  name: created_at
+                  valueComputed: "CURRENT_TIMESTAMP"
+              - column:
+                  name: updated_at
+                  valueComputed: "CURRENT_TIMESTAMP"
+
+        - insert:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  value: "550e8400-e29b-41d4-a716-446655440002"
+              - column:
+                  name: balance
+                  valueNumeric: "500.50"
+              - column:
+                  name: version
+                  valueNumeric: "0"
+              - column:
+                  name: created_at
+                  valueComputed: "CURRENT_TIMESTAMP"
+              - column:
+                  name: updated_at
+                  valueComputed: "CURRENT_TIMESTAMP"

@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: classpath:db/changelog/migration/V1_create_wallets_table.yaml
+  - include:
+      file: classpath:db/changelog/migration/V2_insert_test_data.yaml
